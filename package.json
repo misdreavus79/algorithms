@@ -1,0 +1,28 @@
+{
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-contrib-qunit": "~1.2.0",
+    "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-uglify": "~1.0.1"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "test-code",
+  "version": "0.0.1",
+  "description": "Random things I want to test out.",
+  "main": "test.js",
+  "keywords": [
+    "test"
+  ],
+  "author": "Eli Moreta-Feliz",
+  "license": "ISC"
+}
