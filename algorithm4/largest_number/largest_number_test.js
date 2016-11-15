@@ -9,11 +9,11 @@ var input = [], //numbers
 	largest = 0;
 
 function largestNumber(){
-	input.sort(function(a, b){
-		return a > b;
-	});
+	input.sort().reverse();
 	largest = input.join("");
-	console.log(largest);
+	for(var i = 0; i < input.length; i++){
+		console.log(input[i], input[i+1],isGreaterThanOrEqual(input[i], input[i + 1]));
+	}
 }
 
 function isGreaterThanOrEqual(a, b) {
