@@ -9,8 +9,8 @@ var tests = {
 
 		return testResult;
 	},
-	hasDuplicates : function(arr){
-		var temp = {}, i,result = false;
+	hasDuplicates : function(arr){ //redo this to make it simpler
+		var temp = {}, i, result = false;
 		for(i = 0; i < arr.length; i++){
 			if(temp.hasOwnProperty(arr[i])){
 				result = true;
@@ -21,7 +21,7 @@ var tests = {
 		}
 		return result;
 	},
-	meetingTimes : function(meetings){
+	meetingTimes : function(meetings){ //revisit this later
 		//1) Times are not in order
 		//2) Times intersect without matching
 		var temp = [];
@@ -48,6 +48,25 @@ var tests = {
 		}else{
 			return this.gcdEuclid(b, rem);
 		}
+	},
+	wordLadder : function (beginWord, endWord, wordList) {
+		var final = [beginWord, endWord];
+		for(var i = 0; i < wordList.length; i++){
+			console.log(i +':', beginWord, endWord, wordList[i]);
+			if(beginWord === endWord){
+				break;
+			}else{
+				for(var j = 0; j < endWord.length; j++){
+					console.log(wordList[i].charAt(j), endWord.charAt(j), wordList[i].charAt(j) === endWord.charAt(j));
+					if(wordList[i].charAt(i) === endWord.charAt(j)){
+						beginWord = wordList[i];
+						final.push(wordList[i]);
+						break;
+					}
+				}
+			}
+		}
+		return final;
 	}
 }
 var args = process.argv.slice(2); //arguments passed from command line
@@ -59,3 +78,4 @@ console.log(tests.hasDuplicates([1, 2, 3]));
 console.log(tests.hasDuplicates([1, 1, 2, 3]));
 
 console.log(tests.gcdEuclid(357987465738390548575674, 2349385957475859485784));
+console.log(tests.wordLadder("hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"]));

@@ -12,12 +12,13 @@ function largestNumber(){
 	input.sort().reverse();
 	largest = input.join("");
 	for(var i = 0; i < input.length; i++){
-		console.log(input[i], input[i+1],isGreaterThanOrEqual(input[i], input[i + 1]));
+		console.log(input[i], input[i+1], isGreaterThanOrEqual(input[i], input[i + 1]));
 	}
+	console.log(input);
 }
 
 function isGreaterThanOrEqual(a, b) {
-  return a >= b;
+	return a >= b && a.length < b.length;
 }
 
 // rl.prompt();
