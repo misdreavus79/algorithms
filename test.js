@@ -67,12 +67,77 @@ var tests = {
 			}
 		}
 		return final;
+	},
+	squareDigits : function (num){
+		//may the code be with you
+		let arr = num.toString().split('');
+		console.log(arr);
+		let squared = arr.map(function(el){
+			console.log(el, el*el);
+		return el*el;
+		});
+		console.log(squared);
+		let single = squared.join('');
+		single = parseInt(single);
+		return single;
+	},
+
+	nbYear : function (p0, percent, aug, p) {
+		//convert percent to decimal
+		let dec = percent / 100,
+			years = 0;
+
+		while(p0 < p){
+			p0 = p0 * dec + p0 + aug;
+			years++;
+		}
+
+		return years;
+	},
+
+	printerError : function (s) {
+		let arr = s.split(''),
+		count = 0;
+
+		for(let i = 0; i < arr.length; i++){
+			if(!/[a-m]/.test(arr[i])){
+				count++;
+			}
+		}
+
+		return count + '/' + arr.length;
+	},
+
+	digital_root : function (n) {
+		if(n <= 9){
+			return n;
+		}
+
+		let newNum = n.toString().split('').map(Number).reduce((a, b) => a + b);
+
+		return digital_root(newNum);
+	},
+
+	countItems : function (arr, item) {
+		// Write the code that goes here
+		let newArray = arr.filter(function(el){
+			return el === item;
+		});
+		return newArray;
 	}
 }
 var args = process.argv.slice(2); //arguments passed from command line
 args.forEach(function(element, index, array){
 	console.log(tests.palindrome(element));
 });
+
+var arr = [
+  "apple",
+  ["banana", "strawberry", "apple"],
+  "apple",
+  ["apple", "apple", "cherry"]
+];
+console.log(tests.countItems(arr, "apple"));
 
 console.log(tests.hasDuplicates([1, 2, 3]));
 console.log(tests.hasDuplicates([1, 1, 2, 3]));
