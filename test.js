@@ -14,7 +14,7 @@ var tests = {
 		for(i = 0; i < arr.length; i++){
 			if(temp.hasOwnProperty(arr[i])){
 				result = true;
-				break;
+				break; 
 			}else{
 				temp[arr[i]] = arr[i];
 			}		
