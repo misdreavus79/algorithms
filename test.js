@@ -45,9 +45,8 @@ var tests = {
 		console.log(rem);
 		if(b === 0){
 			return a;
-		}else{
-			return this.gcdEuclid(b, rem);
 		}
+		return this.gcdEuclid(b, rem);
 	},
 	wordLadder : function (beginWord, endWord, wordList) {
 		var final = [beginWord, endWord];
