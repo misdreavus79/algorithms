@@ -14,7 +14,7 @@ var tests = {
 		for(i = 0; i < arr.length; i++){
 			if(temp.hasOwnProperty(arr[i])){
 				result = true;
-				break;
+				break; 
 			}else{
 				temp[arr[i]] = arr[i];
 			}		
@@ -45,9 +45,8 @@ var tests = {
 		console.log(rem);
 		if(b === 0){
 			return a;
-		}else{
-			return this.gcdEuclid(b, rem);
 		}
+		return this.gcdEuclid(b, rem);
 	},
 	wordLadder : function (beginWord, endWord, wordList) {
 		var final = [beginWord, endWord];
